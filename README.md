@@ -54,7 +54,7 @@ python3 run.py
 ## Analysis report
 The analysis report can be found in the `EDA_REPORT.md` file. 
 
-### Technologies used
+## Technologies used
 - Jupyter Notebook
 - Pandas
 - NumPy
