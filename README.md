@@ -31,7 +31,7 @@ Please download the `Parking_Violations_Issued_-_Fiscal_Year_2015.csv` file and 
 1.  **Prerequisites**: Ensure you have Python 3.8+ installed.
 2.  **Install Dependencies**:
     ```bash
-    pip install -r requirements.txt
+    python3 -m pip install -r requirements.txt 
     ```
 
 ## Usage
