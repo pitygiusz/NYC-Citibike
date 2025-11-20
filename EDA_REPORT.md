@@ -5,20 +5,18 @@ This report summarizes the findings from the Exploratory Data Analysis (EDA) of 
 ## 1. Parking Violations by Registration State
 
 **Insight:**
-- **New York (NY)** accounts for the vast majority of violations, approximately **78%**. This is expected as the data is from NYC.
-- **New Jersey (NJ)** is the second most common registration state, accounting for about **9%** of violations.
-- **Pennsylvania (PA)** follows with around **2.5%**.
-- The top 10 states are dominated by nearby states in the Northeast region.
+- Almost 78% of all violations were made by cars registered in **New York**, which is expected as we are analyzing New York City.
+- Approximately one in ten parking tickets were given to cars registered in neighboring **New Jersey**.
+- 2.5% of violations were made by cars from **Pennsylvania**, which does not directly border New York City.
 
 ![Top 10 States](plots/top_10_states.png)
 
 ## 2. Top Violation Codes
 
 **Insight:**
-- **Violation Code 21 (No Parking - Street Cleaning)** is the most frequent violation, making up about **14%** of all tickets.
-- **Violation Code 38 (Fail to Display Muni Meter Receipt)** is the second most common (~12%).
-- **Violation Code 14 (No Standing - Day/Time Limits)** is third (~8.4%).
-- The top 3 violation codes account for over **34%** of all violations, indicating that a few specific types of infractions drive a large portion of the fines.
+- Violation Code 21 (NO PARKING – STREET CLEANING, fine $45) is the most frequent, accounting for 13.88% of violations, followed closely by Code 38 (FAIL TO DISPLAY MUNI METER RECEIPT, fine $35) at 12.08%.
+- The top three violation codes (21, 38, and 14) together make up over 34% of all violations, highlighting their prominence.
+- Despite the dominance of these top codes, the overall distribution of violations is fairly spread out, showing that issues occur across many categories rather than being concentrated in a single area.
 
 ![Top 10 Violation Codes](plots/top_10_violation_codes.png)
 
@@ -26,16 +24,18 @@ This report summarizes the findings from the Exploratory Data Analysis (EDA) of 
 
 ### Day of the Week
 **Insight:**
-- Violations are significantly higher on weekdays compared to weekends.
-- **Thursday and Friday** tend to have slightly higher violation counts.
-- **Sunday** has the lowest number of violations, likely due to relaxed parking regulations (e.g., no street cleaning) and lower traffic enforcement activity.
+- Tuesday, Thursday, and Friday have the highest numbers of violations, with Wednesday and Monday coming a bit behind.
+- Sunday has by far the lowest number of violations, showing a sharp decrease compared to all other days.
+- The distribution of violations is uneven, with significantly higher counts on weekdays and a clear drop during the weekend, suggesting that violation frequency is closely tied to weekday operational or activity levels.
 
 ![Violations by Day](plots/violations_by_day.png)
 
 ### Month
 **Insight:**
-- Violation counts fluctuate throughout the year.
-- (Refer to the plot below for specific monthly trends observed in the 2015 fiscal year data).
+- The fiscal year runs from the beginning of July to the end of June.
+- January and June had the highest number of violations in Fiscal Year 2015 (around 11%), likely because January marks the start of the calendar year (“fresh start”) and June is the last month of the fiscal year (catching up with targets).
+- Most other months (March–October) show average percentages, indicating that violations are fairly evenly spread throughout the fiscal year.
+- February and December had the lowest percentages, likely due to having the fewest working days.
 
 ![Violations by Month](plots/violations_by_month.png)
 
@@ -60,20 +60,31 @@ This report summarizes the findings from the Exploratory Data Analysis (EDA) of 
 ## 6. NY vs. Non-NY Registered Vehicles
 
 **Insight:**
-- There is a significant difference in the types of violations committed by NY registered vehicles versus those from other states.
-- **Violation 71 (Inspection Sticker - Expired/Missing)** is highly specific to NY cars (approx. 6.3% of NY violations vs 0.08% for Non-NY). This makes sense as out-of-state vehicles are not subject to NY inspection sticker display laws in the same way.
-- **Violation 36 (School Zone Speed Violation)** is more common for NY cars.
-- **Violation 14 (No Standing)** is more frequently issued to Non-NY vehicles.
-- Statistical testing (Chi-square) confirms a significant association between registration state (NY vs Non-NY) and the type of violation.
+- Violation 71 (INSP. STICKER – EXPIRED/MISSING, fine $65) is highly specific to NY, accounting for 6.28% of violations there versus only 0.08% in Non-NY.
+- Violation 36 (PHOTO SCHOOL ZONE SPEED VIOLATION, fine $50) is also more prevalent in NY (7.97%) compared to Non-NY (4.22%).
+- Violation 14 (NO STANDING – DAY/TIME LIMITS, fine $115) shows the opposite trend, being more common in Non-NY (11.54%) than in NY (7.53%).
+- Violation 21 (NO PARKING – STREET CLEANING, fine $45) is slightly higher in Non-NY (15.79%) than in NY (13.34%), but it remains one of the most frequent violations in both regions.
+
+**Null hypothesis** (H₀): Violation codes are independent of whether a vehicle is registered in NY or not.
+
+**Alternative hypothesis** (H₁): Violation codes are dependent on whether a vehicle is registered in NY or not (i.e., there is an association).
+
+The chi-square test returned p = 0.00, which is below any conventional significance level (e.g., 0.05). Therefore, **we reject the null hypothesis**.
+
+**Interpretation**: There is a significant association between violation codes and NY registration status. This means that the types of violations issued differ between NY-registered and Non-NY-registered vehicles. For example, some violations (like 71 – INSP. STICKER EXPIRED/MISSING) occur almost exclusively in NY, while others are more common outside NY.
 
 ![NY vs Non-NY Violations](plots/ny_vs_non_ny.png)
 
 ## 7. Vehicle Age Analysis
 
-**Insight:**
-- Analysis of vehicle age (derived from Ticket Year - Vehicle Year) suggests an association between vehicle age groups (Young, Middle-aged, Old) and violation types.
-- (Further detailed breakdown would require looking at the specific contingency tables from the notebook).
+**Null hypothesis** (H₀): Violation codes are independent of vehicle age group.
+
+**Alternative hypothesis** (H₁): Violation codes are dependent on vehicle age group (i.e., there is an association).
+
+The chi-square test returned p = 0.00, which is below any typical significance level (e.g., 0.05). Therefore, we **reject the null hypothesis.**
+
+**Interpretation:** There is a significant association between vehicle age group and violation codes. This means that certain types of violations are more common among vehicles of specific age groups, suggesting that vehicle age may influence the likelihood or type of violation issued.
 
 ## Conclusion
 
-The analysis reveals clear patterns in parking violations in NYC. Enforcement is heavily concentrated on weekdays and specific violation types like street cleaning and meter receipts. There are distinct differences in violation behaviors (or enforcement focus) depending on whether a vehicle is registered in NY or elsewhere, particularly regarding administrative violations like inspection stickers.
+The analysis reveals clear patterns in parking violations in NYC. Enforcement is heavily concentrated on weekdays and specific violation types like street cleaning and meter receipts. There are distinct differences in violation behaviors (or enforcement focus) depending on whether a vehicle is registered in NY or elsewhere, or its age.
