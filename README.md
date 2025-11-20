@@ -51,4 +51,7 @@ python3 run.py
   python3 run.py --tune
   ```
 
+### Analysis report
+The analysis report can be found in the `EDA_REPORT.md` file. 
+
 
