@@ -5,9 +5,9 @@ This project is based around real-world data from New York City. The goal is to 
 
 The project is evolving - more datasets are being analized. Right now it consists of:
 
-- **[NYC Parking Fines](https://github.com/pitygiusz/NYC-ML-Project/tree/main/Parking_Fines)** (analyzes and predicts NYC parking violations data from Fiscal Year 2015)
+- **[NYC Parking Fines](https://github.com/pitygiusz/NYC-ML-Project/tree/main/Parking_Fines)**  - analyzes and predicts NYC parking violations data from Fiscal Year 2015.
 
-- **[NYC Citibike](https://github.com/pitygiusz/NYC-ML-Project/tree/main/Citibike)** (analyzes and predicts Citibike usage based on calendar and weather)
+- **[NYC Citibike](https://github.com/pitygiusz/NYC-ML-Project/tree/main/Citibike)** - analyzes and predicts Citibike usage based on calendar and weather.
 
 
 ## 🛠 Technologies Used
