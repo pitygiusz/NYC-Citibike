@@ -138,6 +138,8 @@ def preprocess_features(X_train, X_test):
     num_cols = X_train.select_dtypes(exclude=["object"]).columns
     
     # Create preprocessor
+    # Note: with_mean=False is used to match the original notebook's preprocessing pipeline
+    # This ensures compatibility and fair comparison with existing models
     preprocessor = ColumnTransformer(
         transformers=[
             ("num", StandardScaler(with_mean=False), num_cols),

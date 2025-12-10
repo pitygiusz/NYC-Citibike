@@ -28,7 +28,7 @@ class ParkingFinesDataset(Dataset):
             self.X = X.float()
             
         if isinstance(y, np.ndarray):
-            self.y = torch.FloatTensor(y) if len(y.shape) == 1 else torch.FloatTensor(y)
+            self.y = torch.FloatTensor(y)
         else:
             self.y = y.float()
     
