@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Citibike AI</title>
+</head>
+<body style="font-family: sans-serif; padding: 20px;">
+
+    <h1>🚲 Citibike AI</h1>
+
+    <input type="date" id="dateInput">
+    <button onclick="calculate()" style="padding: 5px 15px; cursor: pointer;">Predict</button>
+
+    <div id="result">Select a date and click the button.</div>
+
+    <script>
+        // Set default date to tomorrow
+        const tomorrow = new Date();
+        tomorrow.setDate(tomorrow.getDate() + 1);
+        document.getElementById('dateInput').valueAsDate = tomorrow;
+
+        async function calculate() {
+            const date = document.getElementById('dateInput').value;
+            const resultDiv = document.getElementById('result');
+
+            if (!date) return alert("Please select a date!");
+
+            resultDiv.innerHTML = "<b>⏳ Fetching weather and calculating...</b>";
+
+            try {
+                // Request to server (app.py)
+                const res = await fetch('/predict', {
+                    method: 'POST',
+                    headers: {'Content-Type': 'application/json'},
+                    body: JSON.stringify({date: date})
+                });
+                const data = await res.json();
+
+                if(data.error) return alert(data.error);
+
+                // Display results
+                resultDiv.innerHTML = `
+                    <h3>📅 Date: ${data.date}</h3>
+                    <p>🤖 <strong>Model Prediction:</strong> ${data.prediction.toLocaleString()} rides</p>
+                    <p>📚 <strong>Historical (2023):</strong> ${data.historical_value ? data.historical_value.toLocaleString() : "No data"} rides</p>
+                    <p>🌤️ <strong>Weather:</strong> ${data.weather.temp_max}°C, Rain: ${data.weather.percip_total}mm</p>
+                `;
+
+            } catch (e) {
+                console.error(e);
+                resultDiv.innerHTML = "Connection error.";
+            }
+        }
+    </script>
+
+</body>
+</html>
