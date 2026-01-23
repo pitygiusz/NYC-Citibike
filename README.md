@@ -15,7 +15,7 @@ A web application that predicts the daily number of bike rides in NYC based on r
 
 - Machine Learning: Trained a Random Forest Regressor to estimate trip volume.
 
-- Feature Engineering: * Cyclical encoding (Sine/Cosine) for temporal features (Month, Day of Week).
+- Feature Engineering: Cyclical encoding (Sine/Cosine) for temporal features (Month, Day of Week).
 
 - Haversine distance calculations for ride intensity analysis.
 
