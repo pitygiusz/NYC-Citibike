@@ -1,6 +1,6 @@
 # NYC-ML-Project
 
-## 📊 Project Overview
+## Project Overview
 This project is based around real-world data from New York City. The goal is to explore the data, make predictions, draw conclusions and visualize effects of the work.
 
 The project is evolving - more datasets are being analized and funcionalities being developed. Right now it consists of:
@@ -10,5 +10,5 @@ The project is evolving - more datasets are being analized and funcionalities be
 - **[NYC Parking Fines](https://github.com/pitygiusz/NYC-ML-Project/tree/main/Parking_Fines)**  - analysis of NYC parking violations data.
 
 
-## 🤝 Contributions
+## Contributions
 This project was completed individually.
