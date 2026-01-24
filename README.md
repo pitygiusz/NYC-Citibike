@@ -8,7 +8,7 @@ This is a production-ready demand forecaster for the NYC Citi Bike network, deve
 
 The primary challenge of this project was to engineer a pipeline for large-scale data processing on consumer hardware. Dealing with 7GB+ of raw CSV data required moving beyond standard tools to overcome memory constrains and optimize storage.
 
-### Key Features
+## Key Features
 
 - Big Data Engine: Processed 30M+ rows (7GB raw CSV) by converting to Parquet format and utilizing Polars for memory-efficient manipulation.
 
@@ -22,7 +22,7 @@ The primary challenge of this project was to engineer a pipeline for large-scale
 
 - Production: Lightweight Flask API integrated with the Open-Meteo API for live weather data.
 
-### Dataset
+## Dataset
 The dataset used for training model is the public NYC Citi Bike data, available at [citibike](https://citibikenyc.com/system-data) official website. My analysis refers to year 2023. The historical weather data is available at [NOAA](https://www.ncdc.noaa.gov/cdo-web/search).
 
 
