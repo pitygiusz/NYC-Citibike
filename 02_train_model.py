@@ -123,7 +123,7 @@ def main():
 
     print("Random Forest Model Training Pipeline Completed.")
 
-    joblib.dump(model, 'model/random_forest.pkl') # Save the trained model
+    joblib.dump(model, 'app/model/random_forest.pkl') # Save the trained model
     print(f"Pipeline completed in {time.time() - start_total:.2f} seconds.")
 
 if __name__ == "__main__":

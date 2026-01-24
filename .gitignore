@@ -1,3 +1,4 @@
 # Ignore data folders and their contents
 data/ 
 data/*
+archive

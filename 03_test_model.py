@@ -12,7 +12,7 @@ X = daily[features]
 y = daily[target]
 
 
-loaded_model = joblib.load('model/random_forest.pkl')
+loaded_model = joblib.load('app/model/random_forest.pkl')
 
 y_pred = loaded_model.predict(X)
 
