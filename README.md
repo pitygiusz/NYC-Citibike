@@ -2,7 +2,7 @@
 
 This is a basic demand forecaster for the NYC Citi Bike network, developed as a streamlit web application.
 
-**Live Demo:** [Citibike AI](https://citibike-usage-ai.onrender.com/)
+**Live Demo:** [Citi Bike Demand Predictor](https://nyc-citibike-predictor.streamlit.app/)
 
 ## Goal
 
