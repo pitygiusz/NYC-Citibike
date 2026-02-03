@@ -1,4 +1,3 @@
-import polars as pl
 import numpy as np
 import joblib
 import pandas as pd
@@ -12,7 +11,7 @@ X = daily[features]
 y = daily[target]
 
 
-loaded_model = joblib.load('app/model/random_forest.pkl')
+loaded_model = joblib.load('resources/random_forest.pkl')
 
 y_pred = loaded_model.predict(X)
 

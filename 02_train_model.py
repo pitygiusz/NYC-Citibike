@@ -101,7 +101,7 @@ def main():
     )
     
 
-    daily.write_csv('app/daily_aggregated.csv') # Save aggregated data
+    daily.write_csv('resources/daily_aggregated.csv') # Save aggregated data
 
     print("Training Random Forest...")
     
@@ -123,7 +123,7 @@ def main():
 
     print("Random Forest Model Training Pipeline Completed.")
 
-    joblib.dump(model, 'app/model/random_forest.pkl') # Save the trained model
+    joblib.dump(model, 'resources/random_forest.pkl') # Save the trained model
     print(f"Pipeline completed in {time.time() - start_total:.2f} seconds.")
 
 if __name__ == "__main__":
