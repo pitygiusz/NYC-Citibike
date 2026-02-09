@@ -8,7 +8,7 @@ from sklearn.model_selection import train_test_split
 
 
 DATA_PATH_PATTERN = "data/2023-citibike-tripdata/*.parquet" #Path to Parquet files
-WEATHER_PATH = "data/4180612.csv" #Path to weather data
+WEATHER_PATH = "resources/2023_weather.csv" #Path to weather data
 
 def haversine_expr(lat1_col, lon1_col, lat2_col, lon2_col):
     R = 6371

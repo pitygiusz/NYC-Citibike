@@ -4,7 +4,7 @@ import pandas as pd
 from sklearn.model_selection import train_test_split
 from sklearn.metrics import r2_score
 
-daily = pd.read_csv('data/daily_aggregated.csv')
+daily = pd.read_csv('resources/daily_aggregated.csv')
 features = ['month_sin', 'month_cos', 'day_of_week_sin', 'day_of_week_cos', 'wind_avg', 'percip_total', 'temp_max']
 target = 'ride_id_count'
 X = daily[features]
